@@ -5,12 +5,12 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function Addproduct(){
 
-const [name, setName]= useState("")
-const [price, setprice]= useState("")
-const [desc, setdesc]= useState("")
-const [quantity, setquantity]= useState("")
-const [primage, setprimage]= useState("")
-const [category, setcategory]= useState("")
+const [name, setName]=  useState("")
+const [price, setprice]=  useState("")
+const [desc, setdesc]=  useState("")
+const [quantity, setquantity]=  useState("")
+const [primage, setprimage]=  useState("")
+const [category, setcategory]=  useState("")
 
 const navigate= useNavigate();
 
@@ -25,7 +25,7 @@ e.preventDefault()
   formData.append("img", primage); 
   formData.append("category", category); 
 
-axios.post("http://localhost:9000/create/Product", formData, {
+axios.post("http://localhost:2100/create/Product", formData, {
    headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -36,7 +36,7 @@ axios.post("http://localhost:9000/create/Product", formData, {
     position: "top-right",
     autoClose:2000,
     hideProgressBar:false,
-    onClose: (()=>navigate("/product"))
+    onClose: (()=>navigate("/display"))
   })
   })
 }

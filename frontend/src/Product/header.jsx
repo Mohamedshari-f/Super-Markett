@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+
 import { Link } from "react-router-dom"
 
 function Header(){
@@ -26,11 +26,11 @@ function Header(){
                     <div className="bg-green-500 rounded-full w-10 h-10 ">
                         <h1 className="text-3xl font-semibold text-center text-white">{JSON.parse(getCustomer).data?.customer.name[0]}</h1>
                     </div>
-                   <Link to="customerlogin"> <div onClick={handleLogout} className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <h1> <i class="fa-solid fa-user"></i>Logout</h1> </div> </Link>
+                   <div onClick={handleLogout} className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <h1> <i class="fa-solid fa-user"></i>Logout</h1> </div> 
                 </div> :
                 <div className="flex gap-4 items-center">
-                     <Link to="/customerlogin"><div className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <h1> <i class="fa-solid fa-user"></i>Login</h1> </div> </Link>
-              <Link to="/customerReg"><div className="font-semibold text-2xl px-4 border border-black"> <h1>Register</h1> </div> </Link>
+                   <div className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <h1> <i class="fa-solid fa-user"></i>Login</h1> </div> 
+             <div className="font-semibold text-2xl px-4 border border-black"> <h1>Register</h1> </div> 
                
                 </div>
                  }

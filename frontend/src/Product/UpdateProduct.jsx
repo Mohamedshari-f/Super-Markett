@@ -2,7 +2,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import Dashboard from "./Dashboard"
 import { ToastContainer, toast } from 'react-toastify';
 import Header from "./header";
 
@@ -62,7 +61,7 @@ function UpdateProduct() {
  }
   return (
     <div className="flex gap-10">
-   <Dashboard />
+  
      <div className="bg-green-400  w-[600px] h-[70%] p-8 rounded-xl  mt-10">
       <h2 className="text-2xl font-bold text-white mb-6 text-center">update Product</h2>
 

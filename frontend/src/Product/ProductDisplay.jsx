@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Dashboard from "./Dashboard"
 import { Link } from "react-router-dom";
 import axios from "axios"
 import { useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import Header from "./header";
+import Dashboard from "./dashboard";
 
 function Product(){
 
@@ -64,13 +64,13 @@ function Product(){
   return <>
    <Header />
   <div className="flex gap-14 mt-4">
-     <Dashboard />
+    <Dashboard/>
  <div className="p-6">
  <div className="flex justify-between px-6 ">
      <h1 className=" text-green-300 py-6 px-1 text-3xl font-semibold rounded-lg">Product-list</h1> 
      <div className="mt-6 gap-5">
       <input onChange={handlesearchData} type="text" placeholder="Search Product ..." className="px-3 py-2 h-8 border border-green-500 outline-none rounded-full"/>
-    <Link to="/addproduct"> <button className="bg-green-300 px-3 py-2 rounded-lg ml-2 text-white">Add Product</button> </Link>
+    <Link to="/newproduct"> <button className="bg-green-300 px-3 py-2 rounded-lg ml-2 text-white">Add Product</button> </Link>
      </div>
      </div>
      
@@ -90,7 +90,7 @@ function Product(){
     </tr>
   </thead>
   {
-     data.length >0 ? data.map((item)=>{
+   data.length > 0 ? data.map((item)=>{
       return <tbody>
     <tr className="text-center">
       <td className="px-4 py-2 border">{item.prid}</td>
@@ -99,7 +99,7 @@ function Product(){
       <td className="px-4 py-2 border">{item.desc}</td>
       <td className="px-4 py-2 border">{item.quantity}</td>
       <td className="px-4 py-2 border">{item.category}</td>
-      <td className="px-4 py-2 border"><img className="w-28 h-20" src={`http://localhost:9000/allimages/${item.primage}`} alt="" /></td>
+      <td className="px-4 py-2 border"><img className="w-28 h-20" src={`http://localhost:2100/allimages/${item.primage}`} alt="" /></td>
       <td className={`px-4 py-2 whitespace-nowrap ${item.status==="Available"? "text-green-600 text-3xl":"text-3xl text-red-600"} border`}>{item.status}</td>
       <td className="px-4 py-2 border border-b-0 flex justify-center gap-2">
     <Link to={`/updateproduct/${item._id}`}><i className="fa-solid fa-edit text-green-700  text-2xl"></i> </Link> 
