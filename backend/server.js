@@ -3,6 +3,8 @@ const mongoose = require ("mongoose")
 const cors = require("cors")
 const ProductRouter=require("./Router/productRouter")
 const CustomerRouter=require("./Router/CustomerRouter")
+const adminRouter = require("./Router/adminrouter")
+
 
 const app = express()
 app.use(cors())
@@ -15,6 +17,7 @@ mongoose.connect("mongodb://localhost:27017/RiseMarket").then(()=> console.log("
 
 app.use(ProductRouter)
 app.use(CustomerRouter)
+app.use(adminRouter)
 app.use("/allimages", express.static("images"))
 
 
