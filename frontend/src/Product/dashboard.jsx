@@ -20,9 +20,9 @@ function Dashboard() {
           <li className="flex items-center gap-2  hover:bg-blue-700 p-2 rounded">
            <Link to="/newproduct">  <i class="fa-solid fa-cart-plus"></i>Add Products </Link>
           </li>
-         <li className="flex items-center gap-2  hover:bg-blue-700 p-2 rounded">
+          <Link to="/Customer"><li className="flex items-center gap-2  hover:bg-blue-700 p-2 rounded">
          <h1> <i class="fa-solid fa-user-check"></i> Customers  </h1>
-          </li> 
+          </li> </Link>
           <Link to="/order"> <li className="flex items-center gap-2  hover:bg-blue-700 p-2 rounded">
             <i class="fa-solid fa-cart-shopping"></i> Orders
           </li> </Link> 
