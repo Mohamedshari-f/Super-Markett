@@ -22,32 +22,9 @@ function Carts() {
     setProducts(removeItem)
   }
 
-    // total quantity
-     const TotalQuantity = productsData.reduce((sum, item) => sum + Number(item.quantity), 0)
 
-    //  discount part
-const discount = TotalQuantity >= 20
-  ? 0.15
-  : (TotalQuantity >= 15 && TotalQuantity < 20)
-  ? 0.1
-  : (TotalQuantity >= 10 && TotalQuantity < 15)
-  ? 0.05
-  : 0;
-
-
-//   discountAmount
-
-
-
-      // total price
-const subtotal = productsData.reduce(
-  (sum, item) => sum + (Number(item.price) * Number(item.quantity)), 
-  0
-);
-
-const DiscountAmount = subtotal * discount;
-
-const TotalPrice = subtotal - DiscountAmount;
+    // total price
+    const TotalPrice = productsData.reduce((sum,item) => sum + (Number(item.price) *Number(item.quantity) ), 0)
 
         //  
       const handleIncreament = (id) => {
@@ -74,8 +51,9 @@ const TotalPrice = subtotal - DiscountAmount;
 
   if(getCustomer){
     customerOrder = JSON.parse(getCustomer).data.customer.name
+  }
 
-  console.log(customerOrder)}
+  console.log(customerOrder)
 
   
 
@@ -168,25 +146,6 @@ const TotalPrice = subtotal - DiscountAmount;
             <span>items</span>
             <span>{productsData.length}</span>
           </div>
-          
-         {/* total quantity display waaye */}
-
-          <div className="flex justify-between mb-3">
-          <span>Total Quantity</span>
-          <span>{TotalQuantity}</span>
-          </div>
-
-          <div className="flex justify-between mb-3">
-  <span>Subtotal</span>
-  <span>${subtotal.toFixed(2)}</span>
-</div>
-
-         <div className="flex justify-between mb-3 text-green-600">
-  <span>Discount</span>
-  <span>- ${DiscountAmount.toFixed(2)}</span>
-</div>
-
-
 
           <div className="mb-4">
             <label className="block mb-1">SHIPPING</label>
