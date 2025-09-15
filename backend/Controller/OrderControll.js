@@ -1,4 +1,4 @@
-const ordermodel = require("../Model/Ordermodel")
+const ordermodel = require("../Model/ordermodel")
 const productmodel =require("../Model/productModel")
 
 const createOrder=  async(req, res)=>{
@@ -68,4 +68,43 @@ const readOrder= async (req,res)=>{
         }
 }
 
-module.exports= {createOrder, readOrder, totalorder}
+//total income
+
+const gettotalincome = async(req, res)=>{
+    const TotalAmount=  await ordermodel.aggregate([
+        {
+            $group:{_id:null, totalincome:{$sum:"$TotalAmount"}}
+        }
+    ])
+    if(TotalAmount){
+        res.send(TotalAmount)
+    }
+}
+
+const gettopcustomers= async(req, res)=>{
+const topcustomer = await ordermodel.aggregate([
+    {
+        $group: {
+            _id:"$customer",
+            totalspent:{$Sum:"$TotalAmount"},
+            ordercount: {$sum:1}
+        }
+    },
+
+    {$sort:{totalspent: -1}},
+    {$limit:1}
+])
+if(topcustomer.length === 0 ){
+    return res.status(404).json({message:"no top Customers is there"})
+}
+res.json(
+    topcustomer.map(item=>({
+        customer:item._id,
+        totalspent: item.totalspent,
+        ordercount:item.ordercount
+    }))
+)
+}
+
+
+module.exports= {createOrder, readOrder, totalorder, gettotalincome, gettopcustomers}

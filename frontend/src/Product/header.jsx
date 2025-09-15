@@ -26,7 +26,7 @@ function Header(){
                     <div className="bg-green-500 rounded-full w-10 h-10 ">
                         <h1 className="text-3xl font-semibold text-center text-white">{JSON.parse(getCustomer).data?.customer.name[0]}</h1>
                     </div>
-                   <div onClick={handleLogout} className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <h1> <i class="fa-solid fa-user"></i>Logout</h1> </div> 
+                   <div onClick={handleLogout} className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <button> <i class="fa-solid fa-user"></i>Logout</button> </div> 
                 </div> :
                 <div className="flex gap-4 items-center">
                  <Link to="/CustomerLogin" > <div className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <button> <i class="fa-solid fa-user"></i>Login</button> </div>  </Link> 

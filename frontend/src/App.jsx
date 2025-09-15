@@ -7,6 +7,7 @@ import Customer from "./Pages/costomer/CustomerReg";
 import CustomerLogin from "./Pages/costomer/LoginCustomer";
 import Carts from "./Product/orderCarts";
 import DashboardCards from "./Product/Cards";
+import Report from "./Product/Reports";
 
 function App(){
   return <div>
@@ -19,6 +20,7 @@ function App(){
       <Route path="/CustomerLogin" element= {<CustomerLogin /> } />
       <Route path="/carts" element= {<Carts /> } />
       <Route path="/cards" element= {<DashboardCards /> } />
+      <Route path="/reports" element= {<Report /> } />
    
     </Routes>
   </div>

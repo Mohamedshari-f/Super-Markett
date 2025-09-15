@@ -55,7 +55,7 @@ function UpdateProduct() {
            position: "top-right",
            autoClose:2000,
            hideProgressBar:false,
-           onClose: (()=>Navigate("/product"))
+           onClose: (()=>Navigate("/display"))
          }).catch((Error)=>console.log(Error))
     })
  }
