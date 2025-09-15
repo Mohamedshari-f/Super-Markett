@@ -90,10 +90,10 @@ function Product(){
     </tr>
   </thead>
   {
-   data.length > 0 ? data.map((item)=>{
+   data.length > 0 ? data.map((item, index)=>{
       return <tbody>
     <tr className="text-center">
-      <td className="px-4 py-2 border">{item.prid}</td>
+      <td className="px-4 py-2 border">{index + 1}</td>
       <td className="px-4 py-2 border">{item.name}</td>
       <td className="px-4 py-2 border">${item.price}</td>
       <td className="px-4 py-2 border">{item.desc}</td>

@@ -9,7 +9,7 @@ function Home(){
      
 
        const handleDataRead=()=>{
-    axios.get("http://localhost:9000/read/Products").then((res)=>{
+    axios.get("http://localhost:2100/read/Products").then((res)=>{
       setData(res.data)
     })
   }
@@ -54,7 +54,7 @@ if(!existid){
          {
             data.map((item)=>{
                 return <div className="w-[240px] h-[350px] border border-gray-200 pb-5 mb-6">
-            <img className="w-[210px] h-[200px] mt-2 mb-6 rounded-lg ml-2" src={`http://localhost:9000/allimages/${item.primage}`} alt="" />
+            <img className="w-[210px] h-[200px] mt-2 mb-6 rounded-lg ml-2" src={`http://localhost:2100/allimages/${item.primage}`} alt="" />
             <div className="flex justify-between gap-5">
                 <h1 className="text-2xl">{item.name}</h1>
                 <h1 className={`${item.status==="Available"? "text-green-600 text-2xl":"text-red-600 text-2xl whitespace-nowrap"} `}>{item.status}</h1>

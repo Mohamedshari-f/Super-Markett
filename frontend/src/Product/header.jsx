@@ -29,12 +29,12 @@ function Header(){
                    <div onClick={handleLogout} className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <h1> <i class="fa-solid fa-user"></i>Logout</h1> </div> 
                 </div> :
                 <div className="flex gap-4 items-center">
-                   <div className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <h1> <i class="fa-solid fa-user"></i>Login</h1> </div> 
-             <div className="font-semibold text-2xl px-4 border border-black"> <h1>Register</h1> </div> 
+                 <Link to="/CustomerLogin" > <div className="font-semibold text-2xl bg-green-400 px-5 rounded-lg text-white"> <button> <i class="fa-solid fa-user"></i>Login</button> </div>  </Link> 
+          <Link to="/CustomerReg">  <div className="font-semibold text-2xl px-4 border border-black"> <button>Register</button> </div>  </Link> 
                
                 </div>
                  }
-               <Link to="/cart"> <i class="fa-solid fa-cart-shopping font-semibold text-2xl"></i> </Link>
+               <Link to="/carts"> <i class="fa-solid fa-cart-shopping font-semibold text-2xl"></i> </Link>
             </div>
         </div>
     </div>

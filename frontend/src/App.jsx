@@ -3,8 +3,10 @@ import Product from "./Product/ProductDisplay";
 import Home from "./Pages/Home";
 import Addproduct from "./Product/AddProduct";
 import UpdateProduct from "./Product/UpdateProduct";
-import Customer from "./Pages/costomer/Customer";
+import Customer from "./Pages/costomer/CustomerReg";
 import CustomerLogin from "./Pages/costomer/LoginCustomer";
+import Carts from "./Product/orderCarts";
+import DashboardCards from "./Product/Cards";
 
 function App(){
   return <div>
@@ -13,8 +15,10 @@ function App(){
       <Route path="/newproduct" element= {<Addproduct /> } />
       <Route path="/updateproduct/:id" element= {<UpdateProduct /> } />
       <Route path="/" element= {<Home /> } />
-      <Route path="/Customer" element= {<Customer/> } />
-      <Route path="/CustomerLogin" element= {<CustomerLogin/> } />
+      <Route path="/CustomerReg" element= {<Customer/> } />
+      <Route path="/CustomerLogin" element= {<CustomerLogin /> } />
+      <Route path="/carts" element= {<Carts /> } />
+      <Route path="/cards" element= {<DashboardCards /> } />
    
     </Routes>
   </div>

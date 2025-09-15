@@ -24,7 +24,7 @@ axios.post(url,payload).then((res)=>{
   {       position: "top-right",
            autoClose:2000,
            hideProgressBar:false,
-          //  onClose: (()=>navigate("/"))
+           onClose: (()=>navigate("/"))
          })
          setTimeout(()=>navigate(active==="customer"?"/":"/cards"),1500)
          localStorage.setItem(active==="customer"? "customer":"admin",JSON.stringify(res))

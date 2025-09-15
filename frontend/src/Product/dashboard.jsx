@@ -9,10 +9,10 @@ function Dashboard() {
   return <div className="flex gap-10 ">
       <div className="w-64 bg-blue-900  text-white p-5 flex flex-col min-h-screen">
         <ul className="space-y-4">
-              <li className="flex items-center gap-2  hover:bg-blue-700 p-2 rounded"> 
+           <Link to="/cards">   <li className="flex items-center gap-2  hover:bg-blue-700 p-2 rounded"> 
          
             dashboard
-          </li> 
+          </li> </Link> 
          <Link to="/display"> <li className="flex items-center gap-2  hover:bg-blue-700  rounded"> 
          
             <i class="fa-solid fa-cart-plus"></i>Products
