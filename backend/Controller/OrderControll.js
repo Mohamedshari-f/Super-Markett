@@ -1,4 +1,4 @@
-const ordermodel = require("../Model/productModel")
+const ordermodel = require("../Model/Ordermodel")
 const productmodel =require("../Model/productModel")
 
 const createOrder=  async(req, res)=>{

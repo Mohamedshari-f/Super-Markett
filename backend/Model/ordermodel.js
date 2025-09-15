@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const orderschema = mongoose.Schema({
+const Orderschema = mongoose.Schema({
     customer:{
         type: String,
         required: true
@@ -14,4 +14,4 @@ const orderschema = mongoose.Schema({
     TotalAmount:{type:Number,required:true}
 })
 
-module.exports = mongoose.model("Order",orderschema)
+module.exports = mongoose.model("Order",Orderschema)
